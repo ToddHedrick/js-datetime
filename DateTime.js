@@ -68,13 +68,13 @@ class DateTime extends Date {
    */
   _getDayDefs() {
     return [
-      {"number": "0", "iso_8601_number": "1", "short_name": "Sun", "long_name": "Sunday"},
-      {"number": "1", "iso_8601_number": "2", "short_name": "Mon", "long_name": "Monday"},
-      {"number": "2", "iso_8601_number": "3", "short_name": "Tue", "long_name": "Tuesday"},
-      {"number": "3", "iso_8601_number": "4", "short_name": "Wed", "long_name": "Wednesday"},
-      {"number": "4", "iso_8601_number": "5", "short_name": "Thu", "long_name": "Thursday"},
-      {"number": "5", "iso_8601_number": "6", "short_name": "Fri", "long_name": "Friday"},
-      {"number": "6", "iso_8601_number": "7", "short_name": "Sat", "long_name": "Saturday"},
+      {"number": "0", "iso_8601_number": "7", "short_name": "Sun", "long_name": "Sunday"},
+      {"number": "1", "iso_8601_number": "1", "short_name": "Mon", "long_name": "Monday"},
+      {"number": "2", "iso_8601_number": "2", "short_name": "Tue", "long_name": "Tuesday"},
+      {"number": "3", "iso_8601_number": "3", "short_name": "Wed", "long_name": "Wednesday"},
+      {"number": "4", "iso_8601_number": "4", "short_name": "Thu", "long_name": "Thursday"},
+      {"number": "5", "iso_8601_number": "5", "short_name": "Fri", "long_name": "Friday"},
+      {"number": "6", "iso_8601_number": "6", "short_name": "Sat", "long_name": "Saturday"},
     ];
   }
 
