@@ -6,22 +6,18 @@
  *
  */
 class DateTime extends Date {
-  static DATE_ATOM = "Y-m-d\\TH:i:sP"; // Atom (example: 2005-08-15T15:52:01+00:00)
-  static DATE_COOKIE = "l, d-M-Y H:i:s T"; // HTTP Cookies (example: Monday, 15-Aug-2005 15:52:01 UTC)
-  static DATE_DB_DATETIME = "Y-m-d H:i:s"; // Standard database datetime format (example: 2005-08-15 15:52:01)
-  static DATE_DB_DATE = "Y-m-d"; // Standard database date format (example: 2005-08-15)
-  static DATE_RFC822 = "D, d M y H:i:s O"; // RFC 822 (example: Mon, 15 Aug 05 15:52:01 +0000)
-  static DATE_RFC850 = "l, d-M-y H:i:s T"; // RFC 850 (example: Monday, 15-Aug-05 15:52:01 UTC)
-  static DATE_RFC1036 = "D, d M y H:i:s O"; // RFC 1036 (example: Mon, 15 Aug 05 15:52:01 +0000)
-  static DATE_RFC1123 = "D, d M Y H:i:s O"; // RFC 1123 (example: Mon, 15 Aug 2005 15:52:01 +0000)
-  static DATE_RFC7231 = "D, d M Y H:i:s \\G\\M\\T";  // RFC 7231 (since PHP 7.0.19 and 7.1.5) (example: Sat, 30 Apr 2016 17:52:13 GMT)
-  static DATE_RFC2822 = "D, d M Y H:i:s O"; // RFC 2822 (example: Mon, 15 Aug 2005 15:52:01 +0000)
-  static DATE_RFC3339 = "Y-m-d\\TH:i:sP"; // Same as DATE_ATOM;
-  static DATE_RFC3339_EXTENDED = "Y-m-d\\TH:i:s.vP"; // RFC 3339 EXTENDED format (example: 2005-08-15T15:52:01.000+00:00)
-  static DATE_RFC3339_EXTENDED_O = "Y-m-d\\TH:i:s.vO"; // RFC 3339 EXTENDED format without the colon in the timezone offset (example: 2005-08-15T15:52:01.000+0000)
-  static DATE_SQLITE = "Y-m-d H:i:s.v P"; // SQLite datetime format (example: 2005-08-15 15:52:01.000 +00:00)
-  static DATE_RSS = "D, d M Y H:i:s O"; // RSS (example: Mon, 15 Aug 2005 15:52:01 +0000)
-  static DATE_W3C = "Y-m-d\\TH:i:sP"; // World Wide Web Consortium (example: 2005-08-15T15:52:01+00:00). Same as DATE_ATOM;
+  static DATE_COOKIE = "l, d-M-Y H:i:s T"; // HTTP Cookies. Example: "Monday, 15-Aug-2005 15:52:01 UTC"
+  static DATE_DB_DATETIME = "Y-m-d H:i:s"; // Standard database datetime format. Example: "2005-08-15 15:52:01"
+  static DATE_DB_DATE = "Y-m-d"; // Standard database date format. Example: "2005-08-15"
+  static DATE_DB_SQLITE = "Y-m-d H:i:s.v P"; // SQLite datetime format (example: 2005-08-15 15:52:01.000 +00:00)
+  static DATE_RFC850 = "l, d-M-y H:i:s T"; // RFC 850. Example: "Monday, 15-Aug-05 15:52:01 UTC"
+  static DATE_RFC1036 = "D, d M y H:i:s O"; // RFC 1036. Example: "Mon, 15 Aug 05 15:52:01 +0000"
+  static DATE_RFC2822 = "D, d M Y H:i:s O"; // RFC 2822. Example: "Mon, 15 Aug 2005 15:52:01 +0000"
+  static DATE_RFC7231 = "D, d M Y H:i:s \\G\\M\\T";  // RFC 7231. Example: "Sat, 30 Apr 2016 17:52:13 GMT"
+  static DATE_RFC3339_EXTENDED = "Y-m-d\\TH:i:s.vP"; // RFC 3339 EXTENDED format. Example: "2005-08-15T15:52:01.000+00:00"
+  static DATE_RFC3339_EXTENDED_O = "Y-m-d\\TH:i:s.vO"; // RFC 3339 EXTENDED format without the colon in the timezone offset. Example: "2005-08-15T15:52:01.000+0000"
+  static DATE_RSS = "D, d M Y H:i:s O"; // RSS Example: "Mon, 15 Aug 2005 15:52:01 +0000"
+  static DATE_W3C = "Y-m-d\\TH:i:sP"; // World Wide Web Consortium. Example: "2005-08-15T15:52:01+00:00"
 
   /**
    *
