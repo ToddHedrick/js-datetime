@@ -25,7 +25,7 @@ The JS DateTime class uses (mostly) the same formatting characters as the PHP Da
   * Example: `var date = DateTime.createFromUnixTimeStamp(1735675200145, "milliseconds");`
  
 ## Format Guide
-|  Character  |Explanation|
+|Character|Explanation|
 |:----------------:|:----------|
 |Year|--------------------|
 |Y|The four digit numeric representation of a year.	Examples: 1970, 1989, 2008, 2024, etc|
@@ -63,3 +63,17 @@ The JS DateTime class uses (mostly) the same formatting characters as the PHP Da
 |c|ISO 8601 formatted date. Equivalent of "Y-m-d\\TH:m:sP". Example:	2004-02-12T15:19:21+00:00|
 |r|RFC 2822/RFC 5322 formatted date. Equivalent of "D, j M Y H:i:s O".	Example: Thu, 21 Dec 2000 16:01:07 +0200|
 |U|Seconds since the Unix Epoch 1970-01-01 00:00:00 UTC|
+
+## Interval Formatting
+Use the following formatting key to modify the existing datetime with a simple interval string
+
+|Character|Explanation|
+|:----------------:|:----------|
+|Y|Years. Example: "1Y" equals "add 1 year"|
+|M|Months.<br>Examples:<br>"3M" equals "add 3 months"<br>"1Y3M" equals "add 1 year and 3 months"|
+|D|Days.<br>Examples:<br>"-7D" equals "subtract 7 days"<br>"1Y3M-7D" equals "add 1 year, add 3 months, and subtract 7 days"|
+|T|Time - Values following the letter T will be considered as time, not date, values|
+|H|Hours.<br>Examples:<br>"T6H" equals "add 6 hours"<br>"1Y3M-7DT6H" equals "add 1 year, add 3 months, subtract 7 days, and add 6 hours"|
+|M|Minutes.<br>Examples:<br>"T-30M" equals "subtract 30 minutes"<br>"T6H-30M" equals "add 6 hours and subtract 30 minutes"<br>"1Y3M-7DT6H-30M" equals "add 1 year, add 3 months, subtract 7 days, add 6 hours, and subtract 30 minutes"|
+|S|Seconds.<br>Examples:<br>"T15S" equals "add 15 seconds"<br>"T6H-30M15S" equals "add 6 hours, subtract 30 minutes, and add 15 seconds"<br>"1Y3M-7DT6H-30M15S" equals "add 1 year, add 3 months, subtract 7 days, add 6 hours, subtract 30 minutes, and add 15 seconds"|
+|V|Milliseconds.<br>Examples:<br>"T100V" equals "add 100 milliseconds"<br>"T6H-30M15S100V" equals "add 6 hours, subtract 30 minutes, add 15 seconds, and add 100 milliseconds"<br>"1Y3M-7DT6H-30M15S100V" equals "add 1 year, add 3 months, subtract 7 days, add 6 hours, subtract 30 minutes, add 15 seconds, and add 100 milliseconds"|
