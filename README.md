@@ -1,7 +1,7 @@
 # js-datetime
 Date and Time Helper classes to provide easier to use way of formatting dates and modifying the dates.
 
-The JS DateTime class uses the PHP style DateTime formating for easier use [https://www.php.net/manual/en/datetime.format.php](https://www.php.net/manual/en/datetime.format.php) and extends the native JS Date class to allow you to fully utilize the native funtionc
+The JS DateTime class uses the PHP style DateTime formating [https://www.php.net/manual/en/datetime.format.php](https://www.php.net/manual/en/datetime.format.php) for easier use and extends the native JS Date class to allow you to fully utilize the native functions
 
 ## How To Use
 
