@@ -60,6 +60,6 @@ The JS DateTime class uses (mostly) the same formatting characters as the PHP Da
 |p|This is the same as "P", but returns Z instead of +00:00 for UTC.	Examples: Z, +08:00, -02:00|
 |Z|The timezone offset in seconds. The offset for timezones east of UTC is always positive and timezones those west of UTC are always negative.	-43200 through 50400|
 |Other|--------------------|
-|c|ISO 8601 formatted date. Example:	2004-02-12T15:19:21+00:00 (equivalent of "Y-m-d\\TH:m:sP")|
-|r|RFC 2822/RFC 5322 formatted date.	Example: Thu, 21 Dec 2000 16:01:07 +0200 (equivalent of "D, j M Y H:i:s O")|
+|c|ISO 8601 formatted date. Equivalent of "Y-m-d\\TH:m:sP". Example:	2004-02-12T15:19:21+00:00|
+|r|RFC 2822/RFC 5322 formatted date. Equivalent of "D, j M Y H:i:s O".	Example: Thu, 21 Dec 2000 16:01:07 +0200|
 |U|Seconds since the Unix Epoch 1970-01-01 00:00:00 UTC|
