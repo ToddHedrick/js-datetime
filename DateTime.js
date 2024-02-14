@@ -145,7 +145,7 @@ class DateTime extends Date {
    * @param {string} noun - default is seconds
    * @returns {DateTime}
    */
-  static createDateFromUnixTimeStamp(value, noun = "seconds") {
+  static createFromUnixTimeStamp(value, noun = "seconds") {
     if (typeof value === "undefined") {
       value = 0;
     }
@@ -297,7 +297,7 @@ class DateTime extends Date {
         noun = "milliseconds";
         new_date_str += match_obj["v"];
       }
-      return DateTime.createDateFromUnixTimeStamp(new_date_str, noun);
+      return DateTime.createFromUnixTimeStamp(new_date_str, noun);
     } else {
       let slash_format = (match_obj.hasOwnProperty("y"));
       year = match_obj["Y"] || match_obj["y"] || "";
