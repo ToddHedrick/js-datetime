@@ -7,7 +7,7 @@
  *
  */
 class DateTime extends Date {
-  static version = "1.0.0":
+  static version = "1.0.1";
   
   static DATE_COOKIE = "l, d-M-Y H:i:s T"; // HTTP Cookies. Example: "Monday, 15-Aug-2005 15:52:01 UTC"
   static DATE_DB_DATETIME = "Y-m-d H:i:s"; // Standard database datetime format. Example: "2005-08-15 15:52:01"
