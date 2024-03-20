@@ -1,4 +1,5 @@
 /**
+ * @version 1.0.1
  * @author Todd Hedrick
  * This class extends the out-of-the-box Javascript Date object to
  * provide an easy-to-use format function that uses most of
@@ -6,6 +7,8 @@
  *
  */
 class DateTime extends Date {
+  static version = "1.0.0":
+  
   static DATE_COOKIE = "l, d-M-Y H:i:s T"; // HTTP Cookies. Example: "Monday, 15-Aug-2005 15:52:01 UTC"
   static DATE_DB_DATETIME = "Y-m-d H:i:s"; // Standard database datetime format. Example: "2005-08-15 15:52:01"
   static DATE_DB_DATE = "Y-m-d"; // Standard database date format. Example: "2005-08-15"
