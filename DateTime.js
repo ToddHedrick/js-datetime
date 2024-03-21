@@ -21,6 +21,52 @@ class DateTime extends Date {
   static DATE_RFC3339_EXTENDED_O = "Y-m-d\\TH:i:s.vO"; // RFC 3339 EXTENDED format without the colon in the timezone offset. Example: "2005-08-15T15:52:01.000+0000"
   static DATE_RSS = "D, d M Y H:i:s O"; // RSS Example: "Mon, 15 Aug 2005 15:52:01 +0000"
   static DATE_W3C = "Y-m-d\\TH:i:sP"; // World Wide Web Consortium. Example: "2005-08-15T15:52:01+00:00"
+  
+  _timezone;
+
+  /**
+   *
+   * 
+   */
+  getTimeZone(){
+     if(typeof this._timezone === "undefined"){
+      if(typeof DateTimeZone === "function"){
+        this._timezone = new DateTimeZone();
+      } else {
+          let offset = String(-1 * dateObj.getTimezoneOffset());
+          let timezone_code = String(dateObj.toLocaleTimeString("en-US", {timeZoneName: "short"}).split(" ")[2]);
+          if (offset === "0") {
+            timezone_code = "UTC";
+          }
+        this._timezone = {
+          "region": "",
+          "timezone": Intl.DateTimeFormat().resolvedOptions().timeZone,
+          "has_dst": false,
+          "location": {
+            "country_code": ""
+          },
+          "abbreviations": {}
+        };
+        this._timezone["abbreviations"][timezone_code] = {
+          "dst": false,
+          "offset": offset,
+        }
+      }
+    }
+  }
+
+  /**
+   *
+   * 
+   */
+  setTimeZone(datetimezone){
+    if(typeof datetimezone === "string"){
+      this._Timezone = new DateTimeZone(datetimezone);
+    } else if(typeof datetimezone === "object" && datetimezone.constructor.name === "DateTimeZone"){
+      this._timezone = datetimezone;
+    } else {
+      throw new Error("Invalid value provided. datetimezone must be a string or a DateTimeZone object");
+  }
 
   /**
    *
@@ -28,6 +74,7 @@ class DateTime extends Date {
    * @param {string} lang
    */
   _getTimeZoneCodeFromDate(dateObj, lang = "en-US") {
+   
     let offset = String(-1 * dateObj.getTimezoneOffset());
     let timezone_code = String(dateObj.toLocaleTimeString("en-US", {timeZoneName: "short"}).split(" ")[2]);
 
@@ -101,7 +148,7 @@ class DateTime extends Date {
       minutes = this.getMinutes();
       seconds = this.getSeconds();
       milliseconds = this.getMilliseconds();
-      timezone_offset = this.getTimezoneOffset();
+      timezone_offset = (-1 * this.getTimezoneOffset());
       timezone_code = this._getTimeZoneCodeFromDate(this);
     }
 
@@ -136,7 +183,7 @@ class DateTime extends Date {
       "O": timezone_offset_sign + timezone_offset_hours + timezone_offset_minutes,
       "P": timezone_offset_sign + timezone_offset_hours + ":" + timezone_offset_minutes,
       "p": (timezone_offset === 0) ? "Z" : (timezone_offset_sign + timezone_offset_hours + ":" + timezone_offset_minutes),
-      "Z": String(-1 * (timezone_offset * 60)),
+      "Z": String((timezone_offset * 60)),
       "U": Math.floor(this.getTime() / 1000),
     };
   }
