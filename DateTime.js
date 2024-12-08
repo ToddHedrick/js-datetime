@@ -66,6 +66,7 @@ class DateTime extends Date {
       this._timezone = datetimezone;
     } else {
       throw new Error("Invalid value provided. datetimezone must be a string or a DateTimeZone object");
+    }
   }
 
   /**
